@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ExpenseService.Models
 {
@@ -19,6 +20,9 @@ namespace ExpenseService.Models
         public int? CategoryId { get; set; }  // nullable since FK might not always be set
 
         public string? Notes { get; set; }
+
+        [JsonIgnore]
+        public Category? Category { get; set; }
     }
 
 }
