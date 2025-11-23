@@ -1,0 +1,6 @@
+mat-card { padding: 16px; }
+.controls { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.search { flex:1; }
+.filter { width: 220px; }
+table { width: 100%; margin-bottom: 12px; }
+.summary { margin-top: 12px; }

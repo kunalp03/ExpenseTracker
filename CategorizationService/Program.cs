@@ -3,6 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular",
+        policy =>
+        {
+            policy.AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .WithOrigins("http://localhost:4200");
+        });
+});
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -25,6 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAngular");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

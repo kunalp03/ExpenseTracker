@@ -13,6 +13,13 @@ app/**/*.js.map
 node_modules/
 bower_components/
 
+# Ignore the setup SQL file
+setup.sql
+
+# Ignore the app settings file
+CategorizationService/appsettings.json
+ExpenseService/appsettings.json
+
 # IDEs and editors
 .idea/
 

@@ -1,0 +1,8 @@
+<div class="page-wrap">
+  <h1 class="page-title">Expense Tracker</h1>
+
+  <div class="cards">
+    <app-add-expense (expenseAdded)="onExpenseAdded($event)"></app-add-expense>
+    <app-expense-list #list></app-expense-list>
+  </div>
+</div>

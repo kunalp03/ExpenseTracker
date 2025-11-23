@@ -1,10 +1,12 @@
 import { Category } from './category.model';
 
 export interface Expense {
-  expenseId: number;
+  expenseId?: number;
   title: string;
   amount: number;
-  expenseDate: string;
-  categoryId: number;
-  category?: Category;
+  date: string;        // ISO string (bind to date input)
+  categoryId?: number;
+  notes?: string;
+  categoryName?: string; // optional for display
+  category?: Category;   // optional nested
 }
